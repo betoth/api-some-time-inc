@@ -9,13 +9,15 @@ Task 1 implementation, building an API that returns the time in the UTC timezone
 
 The project structure is as follows:
 
+```
 api-some-time-inc/
 ├── go.mod
 ├── go.sum
 ├── main.go
 ├── api/
-│ ├── api.go
-│ └── handlers.go
+│   ├── api.go
+│   └── handlers.go
+```
 
 ### Files
 
@@ -40,7 +42,7 @@ curl http://localhost:8080/api/time
 
 Time in another timezones
 ```sh
-localhost:8000/api/time?tz=America/New_York,Asia/Kolkata
+curl http://localhost:8000/api/time?tz=America/New_York,Asia/Kolkata
 ```
 
 ### Additional Resources
