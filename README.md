@@ -29,7 +29,7 @@ api-some-time-inc/
 
 1. Navigate to the project directory and run `go run main.go`.
 2. The API will be available at `http://localhost:8080/api/time`
-3. It is possible to add parameters to the request using the 'tz' tag
+3. It is possible to add parameters to the request using the `tz` tag
 
 ### Testing the API
 
