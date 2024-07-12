@@ -12,7 +12,7 @@ import (
 func Start() {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/api/time", TimeInAnotherTimeZone).Methods(http.MethodGet)
+	router.HandleFunc("/api/time", TimeInTimeZone).Methods(http.MethodGet)
 
 	fmt.Println("Listening API on port 8000")
 	log.Fatal(http.ListenAndServe("localhost:8000", router))
