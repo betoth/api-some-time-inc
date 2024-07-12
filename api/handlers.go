@@ -14,15 +14,15 @@ func TimeInTimeZone(w http.ResponseWriter, r *http.Request) {
 	timeInTimeZones := make(map[string]string)
 	URLtimeZones := r.URL.Query().Get("tz")
 
-	if URLtimeZones == "" {
-		location, err := time.LoadLocation("UTC")
+	if len(URLtimeZones) == 0 {
+		location, err := time.LoadLocation("Etc/UTC")
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			fmt.Fprint(w, err)
 			return
 		}
 
-		timeInTimeZones["Etc/UTC"] = time.Now().In(location).Format("2006-01-02 15:04:05 -0700 MST")
+		timeInTimeZones["UTC"] = time.Now().In(location).Format("2006-01-02 15:04:05 -0700 MST")
 
 	} else {
 		timezones := strings.Split(URLtimeZones, ",")
